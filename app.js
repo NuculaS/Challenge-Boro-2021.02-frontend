@@ -25,7 +25,7 @@ if (!mass.length) {
 
 function getDataFromFetch() {
     loader.style.display = 'block'
-    const url = 'http://contest.elecard.ru/frontend_data/catalog.json'
+    const url = 'https://json-2afae-default-rtdb.firebaseio.com/.json'
     fetch(url)
         .then(data => data.json())
         .then(data => {
@@ -139,7 +139,6 @@ upDate.addEventListener('click', () => {
 })
 
 clearAllCreateTreeList.addEventListener('click', () => {
-    loader.style.display = 'block'
     while (body.firstChild) {
         body.removeChild(body.firstChild)
     }
@@ -185,8 +184,7 @@ name.addEventListener('change', () => sorting('image'))
 size.addEventListener('change', () => sorting('filesize'))
 
 function treeList() {
-    loader.style.display = 'none'
-    const url = 'http://contest.elecard.ru/frontend_data/catalog.json'
+    const url = 'https://json-2afae-default-rtdb.firebaseio.com/.json'
     fetch(url)
         .then(response => response.json())
         .then(data => {
